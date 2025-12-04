@@ -53,7 +53,7 @@
         }
 
         .container {
-            background: rgba(18, 18, 18, 0.8); /* Semi-transparent to let stars show through slightly */
+            background: rgba(18, 18, 18, 0.85); 
             backdrop-filter: blur(10px);
             width: 100%;
             max-width: 420px;
@@ -70,11 +70,11 @@
             width: 180px;
             height: 180px;
             margin: 0 auto 20px auto;
-            border-radius: 50%; /* Circle crop */
+            border-radius: 50%; 
             overflow: hidden;
             border: 2px solid var(--accent-gold);
             box-shadow: 0 0 20px var(--accent-glow);
-            background-color: #000; /* Ensures seamless blend */
+            background-color: #000; 
         }
         
         .logo-container img {
@@ -99,8 +99,7 @@
             color: #888;
             letter-spacing: 1px;
             margin-top: 0;
-            margin-bottom: 35px;
-            border-bottom: 1px solid #333;
+            margin-bottom: 25px;
             display: inline-block;
             padding-bottom: 10px;
         }
@@ -108,9 +107,46 @@
         .bio-text {
             font-size: 14px;
             color: #ccc;
-            margin-bottom: 40px;
+            margin-bottom: 25px;
             line-height: 1.6;
             font-style: italic;
+        }
+
+        /* --- New Pricing Section --- */
+        .pricing-menu {
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+            padding: 20px 0;
+            margin-bottom: 35px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .pricing-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .service-name {
+            font-family: 'Montserrat', sans-serif;
+            color: #bbb;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 13px;
+        }
+
+        .service-price {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 16px;
         }
 
         .links-group {
@@ -128,7 +164,7 @@
             border: 1px solid var(--accent-gold);
             color: var(--accent-gold);
             text-decoration: none;
-            border-radius: 4px; /* Sharper corners for witchy vibe */
+            border-radius: 4px; 
             font-family: 'Cinzel', serif;
             font-weight: 700;
             letter-spacing: 1px;
@@ -193,17 +229,29 @@
             Serving Tacoma's spirits for 16 years.
         </p>
 
-        <div class="links-group">
-            <a href="INSERT_SQUARE_LINK_HERE" class="btn primary" target="_blank">
-                <i class="fas fa-magic"></i> Book Ritual
-            </a>
+        <div class="pricing-menu">
+            <div class="pricing-item">
+                <span class="service-name">Ritual Cuts</span>
+                <span class="service-price">$25+</span>
+            </div>
+            <div class="pricing-item">
+                <span class="service-name">Alchemy Color</span>
+                <span class="service-price">$100+</span>
+            </div>
+        </div>
 
-            <a href="https://instagram.com/INSERT_HANDLE_HERE" class="btn" target="_blank">
-                <i class="fab fa-instagram"></i> The Coven (IG)
+        <div class="links-group">
+            
+            <a href="mailto:getcutright@robertacutright.com?subject=Appointment Request - Roberta Cutright" class="btn primary">
+                <i class="fas fa-envelope"></i> Request Appointment
             </a>
 
             <a href="sms:+12533065726" class="btn">
                 <i class="far fa-comment-dots"></i> Text Stephanie
+            </a>
+
+            <a href="https://instagram.com/get.cutright" class="btn" target="_blank">
+                <i class="fab fa-instagram"></i> The Coven (IG)
             </a>
 
         </div>
