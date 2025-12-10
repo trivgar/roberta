@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roberta Cutright | Hair Styling</title>
-    
+
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+
+    <!-- Meta / Social -->
+    <meta name="description" content="Private, appointment-only hair studio in Tacoma, WA. Witchy cuts, creative color, and transformative styling by Stephanie at Roberta Cutright.">
+    <meta property="og:title" content="Roberta Cutright | Hair Styling">
+    <meta property="og:description" content="Private, appointment-only in-home salon in Tacoma, WA. Creative color, cuts, and witchy vibes.">
+    <meta property="og:image" content="https://robertacutright.com/logo.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://robertacutright.com/">
+
     <style>
         :root {
-            --bg-color: #050505;       
-            --card-bg: #121212;       
-            --text-main: #e0e0e0;      
-            --accent-gold: #d4af37;  
+            --bg-color: #050505;
+            --card-bg: #121212;
+            --text-main: #e0e0e0;
+            --accent-gold: #d4af37;
             --accent-glow: rgba(212, 175, 55, 0.3);
         }
 
@@ -31,12 +40,11 @@
             position: relative;
         }
 
-        /* Subtle Starry Background Animation */
         body::before {
             content: "";
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: 
+            background-image:
                 radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 3px),
                 radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 2px),
                 radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 3px);
@@ -52,8 +60,14 @@
             to { transform: translateY(-550px); }
         }
 
+        @media (prefers-reduced-motion: reduce) {
+            body::before {
+                animation: none;
+            }
+        }
+
         .container {
-            background: rgba(18, 18, 18, 0.85); 
+            background: rgba(18, 18, 18, 0.85);
             backdrop-filter: blur(10px);
             width: 100%;
             max-width: 420px;
@@ -65,18 +79,17 @@
             position: relative;
         }
 
-        /* Logo Styling */
         .logo-container {
             width: 180px;
             height: 180px;
             margin: 0 auto 20px auto;
-            border-radius: 50%; 
+            border-radius: 50%;
             overflow: hidden;
             border: 2px solid var(--accent-gold);
             box-shadow: 0 0 20px var(--accent-glow);
-            background-color: #000; 
+            background-color: #000;
         }
-        
+
         .logo-container img {
             width: 100%;
             height: 100%;
@@ -90,7 +103,7 @@
             margin-bottom: 5px;
             letter-spacing: 2px;
             text-transform: uppercase;
-            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
+            text-shadow: 0 2px 10px rgba(212,175,55,0.2);
         }
 
         h2 {
@@ -100,59 +113,22 @@
             letter-spacing: 1px;
             margin-top: 0;
             margin-bottom: 25px;
-            display: inline-block;
             padding-bottom: 10px;
         }
 
         .bio-text {
-            font-size: 14px;
+            font-size: 15px;
             color: #ccc;
             margin-bottom: 25px;
             line-height: 1.6;
             font-style: italic;
         }
 
-        /* --- New Pricing Section --- */
-        .pricing-menu {
-            border-top: 1px solid #333;
-            border-bottom: 1px solid #333;
-            padding: 20px 0;
-            margin-bottom: 35px;
-            width: 90%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .pricing-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-        
-        .pricing-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .service-name {
-            font-family: 'Montserrat', sans-serif;
-            color: #bbb;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 13px;
-        }
-
-        .service-price {
-            font-family: 'Cinzel', serif;
-            color: var(--accent-gold);
-            font-weight: 700;
-            font-size: 16px;
-        }
-
         .links-group {
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 20px;
+            margin-top: 10px;
         }
 
         .btn {
@@ -164,13 +140,12 @@
             border: 1px solid var(--accent-gold);
             color: var(--accent-gold);
             text-decoration: none;
-            border-radius: 4px; 
+            border-radius: 4px;
             font-family: 'Cinzel', serif;
             font-weight: 700;
             letter-spacing: 1px;
             transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
+            width: 100%;
         }
 
         .btn i {
@@ -185,25 +160,23 @@
             transform: translateY(-2px);
         }
 
-        /* The Primary "Book Now" Button */
         .btn.primary {
             background-color: var(--accent-gold);
             color: #050505;
-            border: 1px solid var(--accent-gold);
         }
-        
+
         .btn.primary:hover {
             background-color: #f5d665;
-            box-shadow: 0 0 35px rgba(212, 175, 55, 0.5);
+            box-shadow: 0 0 35px rgba(212,175,55,0.5);
         }
 
         .footer {
             margin-top: 50px;
             font-size: 11px;
-            color: #555;
+            color: #777;
             font-family: 'Cinzel', serif;
         }
-        
+
         .moon-icon {
             color: var(--accent-gold);
             margin-bottom: 15px;
@@ -212,8 +185,8 @@
         }
     </style>
 </head>
-<body>
 
+<body>
     <div class="container">
         <div class="moon-icon"><i class="fas fa-moon"></i></div>
 
@@ -225,35 +198,43 @@
         <h2>Styled by Stephanie</h2>
 
         <p class="bio-text">
-            Transformative styling & color magic.<br>
-            Private in-home studio. <br>
+            Transformative styling &amp; color magic.<br>
+            Private in-home studio.<br>
             Serving Tacoma's spirits for 16 years.
         </p>
 
+        <!--
+        ===========================
+        PRICING MENU (COMMENTED OUT)
+        ===========================
+
+        <div class="pricing-menu">
+            ...your entire pricing menu lives here...
+        </div>
+        -->
+
         <div class="links-group">
-            
             <a href="sms:+12533065726" class="btn primary">
                 <i class="far fa-comment-dots"></i> Text Stephanie
             </a>
 
-            <a href="https://instagram.com/get.cutright" class="btn" target="_blank">
+            <a href="https://instagram.com/get.cutright" class="btn" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-instagram"></i> The Coven (IG)
             </a>
-
-            </div>
+        </div>
 
         <div class="footer">
             EST. 2009 • TACOMA, WA
         </div>
-
     </div>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "HairSalon",
-      "name": "Roberta CutRight",
+      "name": "Roberta Cutright",
       "image": "https://robertacutright.com/logo.jpg",
-      "description": "Private, appointment-only in-home hair salon in Tacoma, WA specializing in creative color and cuts.",
+      "description": "Private, appointment-only in-home salon in Tacoma, WA specializing in creative color and cuts.",
       "priceRange": "$$",
       "telephone": "+12533065726",
       "url": "https://robertacutright.com",
@@ -265,7 +246,7 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 47.2529, 
+        "latitude": 47.2529,
         "longitude": -122.4443
       },
       "openingHoursSpecification": {
