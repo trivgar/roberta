@@ -54,6 +54,11 @@
       to { transform: translateY(-500px); }
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      body::before { animation: none; }
+      .btn { transition: none; }
+    }
+
     .container {
       max-width: 420px;
       width: 100%;
@@ -70,6 +75,7 @@
       color: var(--gold);
       margin-bottom: 15px;
       opacity: 0.85;
+      font-size: 20px;
     }
 
     .logo {
@@ -80,12 +86,14 @@
       overflow: hidden;
       border: 2px solid var(--gold);
       box-shadow: 0 0 20px var(--glow);
+      background: #000;
     }
 
     .logo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
     h1 {
@@ -101,7 +109,8 @@
       font-family: 'Cinzel', serif;
       font-size: 14px;
       color: #888;
-      margin-bottom: 20px;
+      margin: 0 0 20px;
+      letter-spacing: 1px;
     }
 
     .bio {
@@ -109,13 +118,13 @@
       font-size: 15px;
       color: #ccc;
       line-height: 1.6;
-      margin-bottom: 30px;
+      margin: 0 0 30px;
     }
 
     /* SIMPLE PRICING */
     .pricing {
       text-align: left;
-      margin-bottom: 25px;
+      margin: 0 0 25px;
       font-size: 14px;
     }
 
@@ -125,7 +134,7 @@
       color: var(--gold);
       font-size: 14px;
       letter-spacing: 1px;
-      margin-bottom: 10px;
+      margin: 0 0 10px;
       text-transform: uppercase;
     }
 
@@ -134,15 +143,12 @@
       justify-content: space-between;
       padding: 6px 0;
       border-bottom: 1px dotted rgba(255,255,255,0.15);
+      gap: 14px;
     }
 
-    .price-item:last-child {
-      border-bottom: none;
-    }
+    .price-item:last-child { border-bottom: none; }
 
-    .price-name {
-      color: #d6d6d6;
-    }
+    .price-name { color: #d6d6d6; }
 
     .price {
       color: var(--gold);
@@ -155,6 +161,7 @@
       font-size: 12px;
       color: var(--muted);
       margin-top: 10px;
+      line-height: 1.4;
     }
 
     .links {
@@ -190,6 +197,11 @@
       color: #000;
       box-shadow: 0 0 25px var(--glow);
       transform: translateY(-2px);
+    }
+
+    .btn:focus-visible {
+      outline: 2px solid rgba(212,175,55,0.75);
+      outline-offset: 3px;
     }
 
     .footer {
@@ -236,7 +248,7 @@
       <div class="price-item"><span class="price-name">Wax (Brow or Lip)</span><span class="price">$20</span></div>
 
       <div class="pricing-note">
-        Prices vary by length & density. Text for exact quotes.
+        Prices vary by length &amp; density. Text or email for exact quotes.
       </div>
     </div>
 
@@ -245,11 +257,15 @@
         <i class="far fa-comment-dots"></i> Text Stephanie
       </a>
 
-      <a href="https://roberta-cutright.printify.me/" class="btn" target="_blank">
+      <a href="mailto:getcutright@robertacutright.com?subject=Appointment%20Request%20-%20Roberta%20Cutright" class="btn">
+        <i class="far fa-envelope"></i> Email
+      </a>
+
+      <a href="https://roberta-cutright.printify.me/" class="btn" target="_blank" rel="noopener noreferrer">
         <i class="fas fa-shirt"></i> Merch
       </a>
 
-      <a href="https://instagram.com/get.cutright" class="btn" target="_blank">
+      <a href="https://instagram.com/get.cutright" class="btn" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-instagram"></i> The Coven (IG)
       </a>
     </div>
