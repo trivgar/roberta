@@ -9,234 +9,187 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-  <!-- Meta / Social -->
+  <!-- Meta -->
   <meta name="description" content="Private, appointment-only hair studio in Tacoma, WA. Witchy cuts, creative color, and transformative styling by Stephanie at Roberta Cutright.">
-  <meta property="og:title" content="Roberta Cutright | Hair Styling">
-  <meta property="og:description" content="Private, appointment-only in-home salon in Tacoma, WA. Creative color, cuts, and witchy vibes.">
-  <meta property="og:image" content="https://robertacutright.com/logo.jpg">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://robertacutright.com/">
 
   <style>
     :root {
-      --bg-color: #050505;
-      --card-bg: #121212;
-      --text-main: #e0e0e0;
+      --bg: #050505;
+      --card: #121212;
+      --text: #e0e0e0;
       --muted: #9a9a9a;
-      --accent-gold: #d4af37;
-      --accent-glow: rgba(212, 175, 55, 0.3);
-      --border: #2a2a2a;
+      --gold: #d4af37;
+      --glow: rgba(212,175,55,0.3);
     }
 
     * { box-sizing: border-box; }
 
     body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-main);
       margin: 0;
       padding: 20px;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg);
+      color: var(--text);
     }
 
-    /* Starry background */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
       background-image:
         radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 3px),
-        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 2px),
-        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 3px);
-      background-size: 550px 550px, 350px 350px, 250px 250px;
-      background-position: 0 0, 40px 60px, 130px 270px;
-      animation: twinkle 60s linear infinite;
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 2px);
+      background-size: 500px 500px, 300px 300px;
+      animation: drift 60s linear infinite;
+      opacity: 0.5;
       z-index: -1;
-      opacity: 0.6;
     }
 
-    @keyframes twinkle {
+    @keyframes drift {
       from { transform: translateY(0); }
-      to { transform: translateY(-550px); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      body::before { animation: none; }
-      .btn { transition: none; }
+      to { transform: translateY(-500px); }
     }
 
     .container {
-      background: rgba(18, 18, 18, 0.85);
-      backdrop-filter: blur(10px);
-      width: 100%;
       max-width: 420px;
-      text-align: center;
-      padding: 50px 25px;
+      width: 100%;
+      background: rgba(18,18,18,0.85);
+      backdrop-filter: blur(10px);
       border-radius: 20px;
+      padding: 45px 25px;
+      text-align: center;
       border: 1px solid #333;
       box-shadow: 0 0 30px rgba(0,0,0,0.8);
     }
 
-    .moon-icon {
-      color: var(--accent-gold);
+    .moon {
+      color: var(--gold);
       margin-bottom: 15px;
-      font-size: 20px;
       opacity: 0.85;
     }
 
-    .logo-container {
+    .logo {
       width: 180px;
       height: 180px;
-      margin: 0 auto 20px auto;
+      margin: 0 auto 20px;
       border-radius: 50%;
       overflow: hidden;
-      border: 2px solid var(--accent-gold);
-      box-shadow: 0 0 20px var(--accent-glow);
-      background-color: #000;
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 20px var(--glow);
     }
 
-    .logo-container img {
+    .logo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
     }
 
     h1 {
       font-family: 'Cinzel', serif;
+      color: var(--gold);
       font-size: 28px;
-      color: var(--accent-gold);
-      margin: 0 0 5px 0;
+      margin: 0 0 6px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      text-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
     }
 
     h2 {
       font-family: 'Cinzel', serif;
       font-size: 14px;
       color: #888;
-      letter-spacing: 1px;
-      margin: 0 0 20px 0;
+      margin-bottom: 20px;
     }
 
-    .bio-text {
+    .bio {
+      font-style: italic;
       font-size: 15px;
       color: #ccc;
-      margin-bottom: 25px;
       line-height: 1.6;
-      font-style: italic;
+      margin-bottom: 30px;
     }
 
-    /* Pricing */
-    .pricing-menu {
-      margin: 25px 0 10px 0;
+    /* SIMPLE PRICING */
+    .pricing {
       text-align: left;
+      margin-bottom: 25px;
+      font-size: 14px;
     }
 
     .pricing-title {
+      text-align: center;
       font-family: 'Cinzel', serif;
-      color: var(--accent-gold);
+      color: var(--gold);
       font-size: 14px;
       letter-spacing: 1px;
+      margin-bottom: 10px;
       text-transform: uppercase;
-      text-align: center;
-      margin-bottom: 6px;
     }
 
-    .pricing-subtitle {
-      text-align: center;
-      font-size: 12px;
-      color: var(--muted);
-      margin-bottom: 18px;
-      line-height: 1.4;
-    }
-
-    .pricing-group {
-      background: rgba(0,0,0,0.25);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 14px;
-      margin: 12px 0;
-    }
-
-    .pricing-item {
+    .price-item {
       display: flex;
       justify-content: space-between;
-      gap: 14px;
-      padding: 10px 2px;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 6px 0;
+      border-bottom: 1px dotted rgba(255,255,255,0.15);
     }
 
-    .pricing-item:last-child {
+    .price-item:last-child {
       border-bottom: none;
-      padding-bottom: 2px;
     }
 
-    .service-name {
-      font-size: 13px;
+    .price-name {
       color: #d6d6d6;
-      line-height: 1.35;
-      flex: 1;
     }
 
-    .service-price {
+    .price {
+      color: var(--gold);
       font-family: 'Cinzel', serif;
-      font-size: 13px;
-      color: var(--accent-gold);
       white-space: nowrap;
     }
 
-    /* Links */
-    .links-group {
+    .pricing-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    .links {
       display: flex;
       flex-direction: column;
       gap: 14px;
-      margin-top: 18px;
-      align-items: center;
+      margin-top: 20px;
     }
 
     .btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px 20px;
-      background-color: transparent;
-      border: 1px solid var(--accent-gold);
-      color: var(--accent-gold);
-      text-decoration: none;
+      padding: 16px;
+      border: 1px solid var(--gold);
       border-radius: 6px;
+      color: var(--gold);
+      text-decoration: none;
       font-family: 'Cinzel', serif;
       font-weight: 700;
       letter-spacing: 1px;
-      transition: all 0.25s ease;
-      width: 100%;
-      max-width: 360px;
-    }
-
-    .btn i {
-      margin-right: 12px;
-    }
-
-    .btn:hover {
-      background-color: var(--accent-gold);
-      color: #000;
-      box-shadow: 0 0 25px var(--accent-glow);
-      transform: translateY(-2px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      transition: 0.25s;
     }
 
     .btn.primary {
-      background-color: var(--accent-gold);
+      background: var(--gold);
       color: #050505;
     }
 
-    .btn.primary:hover {
-      background-color: #f5d665;
+    .btn:hover {
+      background: var(--gold);
+      color: #000;
+      box-shadow: 0 0 25px var(--glow);
+      transform: translateY(-2px);
     }
 
     .footer {
@@ -251,62 +204,52 @@
 
 <body>
   <div class="container">
-    <div class="moon-icon"><i class="fas fa-moon"></i></div>
+    <div class="moon"><i class="fas fa-moon"></i></div>
 
-    <div class="logo-container">
-      <img src="logo.jpg" alt="Roberta Cutright Witchy Hand Logo">
+    <div class="logo">
+      <img src="logo.jpg" alt="Roberta Cutright Logo">
     </div>
 
     <h1>Roberta Cutright</h1>
     <h2>Styled by Stephanie</h2>
 
-    <p class="bio-text">
+    <div class="bio">
       Transformative styling &amp; color magic.<br>
       Private in-home studio.<br>
       Serving Tacoma's spirits for 16 years.
-    </p>
+    </div>
 
-    <section class="pricing-menu">
-      <div class="pricing-title">Menu</div>
-      <div class="pricing-subtitle">Text for exact quotes • Prices vary by length & density</div>
+    <div class="pricing">
+      <div class="pricing-title">Services</div>
 
-      <div class="pricing-group">
-        <div class="pricing-item"><span class="service-name">Chop it like it’s hot (style change)</span><span class="service-price">$55</span></div>
-        <div class="pricing-item"><span class="service-name">Just for the shear of it (haircut) , Long</span><span class="service-price">$45</span></div>
-        <div class="pricing-item"><span class="service-name">Just for the shear of it (haircut) , Short</span><span class="service-price">$35</span></div>
-        <div class="pricing-item"><span class="service-name">Playing with scissors (kids cut)</span><span class="service-price">$20</span></div>
-        <div class="pricing-item"><span class="service-name">Totally buzzin’ (clipper haircut)</span><span class="service-price">$30</span></div>
-        <div class="pricing-item"><span class="service-name">Out with a bang (bang trim)</span><span class="service-price">$10</span></div>
+      <div class="price-item"><span class="price-name">Haircut</span><span class="price">$35–45</span></div>
+      <div class="price-item"><span class="price-name">Style Change</span><span class="price">$55</span></div>
+      <div class="price-item"><span class="price-name">Kids Cut</span><span class="price">$20</span></div>
+      <div class="price-item"><span class="price-name">Clipper Cut</span><span class="price">$30</span></div>
+      <div class="price-item"><span class="price-name">Bang Trim</span><span class="price">$10</span></div>
+      <div class="price-item"><span class="price-name">All-Over Color</span><span class="price">from $130</span></div>
+      <div class="price-item"><span class="price-name">Highlights / Lowlights</span><span class="price">from $170</span></div>
+      <div class="price-item"><span class="price-name">Vivid Color</span><span class="price">from $215</span></div>
+      <div class="price-item"><span class="price-name">Wash &amp; Dry</span><span class="price">$30</span></div>
+      <div class="price-item"><span class="price-name">Styling</span><span class="price">$60</span></div>
+      <div class="price-item"><span class="price-name">Perm</span><span class="price">$140</span></div>
+      <div class="price-item"><span class="price-name">Wax (Brow or Lip)</span><span class="price">$20</span></div>
+
+      <div class="pricing-note">
+        Prices vary by length & density. Text for exact quotes.
       </div>
+    </div>
 
-      <div class="pricing-group">
-        <div class="pricing-item"><span class="service-name">Roots are for trees (all over color)</span><span class="service-price">$130</span></div>
-        <div class="pricing-item"><span class="service-name">Highlight of the party (highlights or lowlights)</span><span class="service-price">$170</span></div>
-        <div class="pricing-item"><span class="service-name">Color me bad (vivid color)</span><span class="service-price">$215</span></div>
-      </div>
-
-      <div class="pricing-group">
-        <div class="pricing-item"><span class="service-name">Mind blowing (wash and dry)</span><span class="service-price">$30</span></div>
-        <div class="pricing-item"><span class="service-name">Just teasing you (styling)</span><span class="service-price">$60</span></div>
-      </div>
-
-      <div class="pricing-group">
-        <div class="pricing-item"><span class="service-name">Permenator (perm)</span><span class="service-price">$140</span></div>
-        <div class="pricing-item"><span class="service-name">Wax on wax off (brows)</span><span class="service-price">$20</span></div>
-        <div class="pricing-item"><span class="service-name">Wax on wax off (lip)</span><span class="service-price">$20</span></div>
-      </div>
-    </section>
-
-    <div class="links-group">
+    <div class="links">
       <a href="sms:+12533065726" class="btn primary">
         <i class="far fa-comment-dots"></i> Text Stephanie
       </a>
 
-      <a href="https://roberta-cutright.printify.me/" class="btn" target="_blank" rel="noopener noreferrer">
+      <a href="https://roberta-cutright.printify.me/" class="btn" target="_blank">
         <i class="fas fa-shirt"></i> Merch
       </a>
 
-      <a href="https://instagram.com/get.cutright" class="btn" target="_blank" rel="noopener noreferrer">
+      <a href="https://instagram.com/get.cutright" class="btn" target="_blank">
         <i class="fab fa-instagram"></i> The Coven (IG)
       </a>
     </div>
