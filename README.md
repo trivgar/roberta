@@ -1,53 +1,39 @@
-# roberta
-roberta cutright
+# robertacutright.com
 
-## Repository Overview
+The site for [robertacutright.com](https://robertacutright.com), a one-page
+site for a hair stylist working from a private studio in Tacoma.
 
-This is a **single-page website** for a hair salon business called "Roberta Cutright".
+## What is in here
 
-### 📄 Files
+```
+index.html      the whole site, 308 lines
+logo.jpg        the RC logo
+logo2.jpg       alternate mark
+docs/plans/     notes on changes before they were made
+CLAUDE.md       working notes for this repo
+```
 
-**README.md**
-- Repository description and overview
+No build step, no framework, no dependencies. Fonts are Cinzel and Montserrat
+from Google Fonts. Everything else is local.
 
-**index.html** (Main Website)
-A professional landing page/business card website for a hair stylist. Key features:
+Open `index.html` in a browser. That is the whole development loop.
 
-**Business Info:**
-- **Business Name:** Roberta Cutright
-- **Stylist:** Stephanie
-- **Location:** Tacoma, WA
-- **Experience:** 16 years (Est. 2009)
-- **Setup:** Private in-home studio
+## Deploying: a push publishes
 
-**Services & Pricing:**
-- Cuts: $35-$55
-- Clipper cuts: $30
-- Color: $130+
-- Highlights: $170+
-- Vivid colors: $215+
-- Perms: $140
+**This repo is git-connected to Cloudflare Pages.** Pushing to `main` deploys
+the live site automatically. There is no separate release step and no
+confirmation, so a commit pushed here is a commit the public sees.
 
-**Design Features:**
-- Dark/mystical theme (black background with gold accents)
-- Animated starry background
-- Moon icon for witchy aesthetic
-- Elegant fonts (Cinzel for headers, Montserrat for body)
-- Responsive mobile-friendly design
+Every other Pages project here is direct-upload, where a push is harmless and
+`wrangler` does the publishing. This one is the exception, which is exactly why
+it is worth the heading.
 
-**Contact Methods:**
-- Email appointment requests (getcutright@robertacutright.com)
-- Text messaging (+1-253-306-5726)
-- Instagram (@get.cutright)
-- Merch shop link
-- SEO structured data for Google search
+## Services and prices live on the page, not here
 
-**logo.jpg**
-The business logo showing:
-- A stylized hand holding hair scissors (peace sign gesture)
-- Gold letters "RC" (Roberta Cutright)
-- Three sparkle stars above
-- Black background with gold/orange tones
-- Witchy/mystical aesthetic matching the brand
+An earlier version of this README listed the price list, the contact details and
+a description of the logo image. By 2026-09-21 it had drifted: highlights had
+moved from $170 to $175, vivid colour from $215 to $220, several services were
+missing, it still carried a phone number the page no longer shows, and it
+claimed SEO structured data the page does not have.
 
-**Overall:** This is a complete "link in bio" style website for a hair salon with a dark, mystical brand identity.
+`index.html` is the source for all of that. This file describes the repo.
