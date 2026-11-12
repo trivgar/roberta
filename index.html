@@ -145,6 +145,8 @@
     }
 
     .price-item:last-child { border-bottom: none; }
+    /* The list sits in its own wrapper, so keep the line under its last row as before. */
+    #price-list .price-item:last-child { border-bottom: 1px dotted rgba(255,255,255,0.15); }
 
     /* INDENT STYLE FOR ADD-ONS */
     .price-item.indent {
@@ -247,6 +249,7 @@
 
     <div class="pricing">
       <div class="pricing-title">Services</div>
+      <div id="price-list">
 
       <div class="price-item"><span class="price-name">Haircut</span><span class="price">$40–50</span></div>
       <div class="price-item"><span class="price-name">Style Change</span><span class="price">$60</span></div>
@@ -272,6 +275,8 @@
       <div class="price-item"><span class="price-name">Wax (Brow or Lip)</span><span class="price">$20</span></div>
       
       <div class="price-item"><span class="price-name">Hair Play (45 mins)</span><span class="price">$60</span></div>
+
+      </div>
 
       <div class="pricing-note">
         Color and styling prices may vary.<br>
@@ -304,5 +309,37 @@
       </span>
     </div>
   </div>
+  <script>
+  // The price list comes from the Booking Companion app, so a price changed
+  // there shows here. The list written into this page is what shows if the
+  // app cannot be reached, or has nothing marked to show.
+  (function () {
+    var URL = "https://roberta.bookingcompanion.app/api/public/tenants/roberta/site";
+    var list = document.getElementById("price-list");
+    if (!list || !window.fetch) return;
+    fetch(URL).then(function (r) {
+      if (!r.ok) throw new Error("no list");
+      return r.json();
+    }).then(function (d) {
+      var services = (d && d.services) || [];
+      if (!services.length) return;
+      var frag = document.createDocumentFragment();
+      services.forEach(function (s) {
+        var row = document.createElement("div");
+        row.className = "price-item" + (s.is_addon || /^add-on\b/i.test(s.name) ? " indent" : "");
+        var name = document.createElement("span");
+        name.className = "price-name";
+        name.textContent = s.name;
+        var price = document.createElement("span");
+        price.className = "price";
+        price.textContent = s.price_label || "$" + (s.price % 1 === 0 ? s.price : s.price.toFixed(2));
+        row.appendChild(name);
+        row.appendChild(price);
+        frag.appendChild(row);
+      });
+      list.replaceChildren(frag);
+    }).catch(function () {});
+  })();
+  </script>
 </body>
 </html>
