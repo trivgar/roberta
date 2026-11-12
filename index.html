@@ -329,7 +329,7 @@
         row.className = "price-item" + (s.is_addon || /^add-on\b/i.test(s.name) ? " indent" : "");
         var name = document.createElement("span");
         name.className = "price-name";
-        name.textContent = s.name;
+        name.textContent = s.display_name || s.name;
         var price = document.createElement("span");
         price.className = "price";
         price.textContent = s.price_label || "$" + (s.price % 1 === 0 ? s.price : s.price.toFixed(2));
